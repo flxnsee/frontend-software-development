@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Зворотній зв’язок - Київська обласна державна адміністрація</title>
+    <link rel="icon" href="images/logo.png" type="image/png">
+</head>
+<body>
+    <header>
+        <img src="images/logo.png" alt="Герб Київської області" width="66" height="80">
+        <p>Київська обласна державна адміністрація</p>
+        <nav aria-label="Повернення на головну сторінку">
+            <form action="index.html" method="get">
+                <button type="submit">Головна сторінка</button>
+            </form>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Зворотній зв’язок</h1>
+        <form action="feedback.html" method="get">
+            <fieldset>
+                <legend>Персональна інформація</legend>
+                <p>
+                    <label for="full-name">Прізвище та ім’я:</label>
+                    <input type="text" id="full-name" name="full_name" autocomplete="name" required>
+                </p>
+                <p>
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" autocomplete="email" required>
+                </p>
+                <p>
+                    <label for="age">Вік:</label>
+                    <input type="number" id="age" name="age" min="1" max="120" step="1" required>
+                </p>
+                <p>
+                    <label for="education">Освіта:</label>
+                    <select id="education" name="education" required>
+                        <option value="" selected disabled>Оберіть освіту</option>
+                        <option value="complete">повна</option>
+                        <option value="incomplete">неповна</option>
+                        <option value="higher">вища</option>
+                        <option value="vocational">професійна</option>
+                    </select>
+                </p>
+            </fieldset>
+            <p>
+                <label for="purpose">Мета зворотнього зв’язку:</label>
+                <select id="purpose" name="purpose" required>
+                    <option value="" selected disabled>Оберіть мету</option>
+                    <option value="cooperation">співпраця</option>
+                    <option value="property-rights-complaint">скарга на порушення права власності</option>
+                    <option value="suggestion">пропозиція</option>
+                    <option value="error">наявність помилки</option>
+                </select>
+            </p>
+            <p>
+                <label for="details">Детально (до 1000 символів):</label><br>
+                <textarea id="details" name="details" rows="6" cols="40" maxlength="1000" required></textarea>
+            </p>
+            <p>
+                <input type="checkbox" id="consent" name="consent" value="yes" required>
+                <label for="consent">Даю згоду на обробку наданої інформації</label>
+            </p>
+            <button type="submit">Надіслати</button>
+        </form>
+    </main>
+</body>
+</html>
