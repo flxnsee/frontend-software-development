@@ -5,6 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Головна сторінка - Київська обласна державна адміністрація</title>
     <link rel="icon" href="images/logo.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            position: relative;
+            padding-top: 250px;
+        }
+        header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1;
+        }
+        main {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 20px;
+        }
+        main > article {
+            grid-column: 1;
+            background: white;
+        }
+        aside {
+            position: sticky;
+            top: 20px;
+            grid-column: 2;
+            grid-row: 1 / 3;
+        }
+        #about {
+            margin: 20px;
+            padding: 20px;
+            max-height: 320px;
+            overflow: auto;
+        }
+        #about > p:first-of-type::before {
+            content: "👋 ";
+        }
+        #leadership {
+            padding: 20px;
+        }
+        #leadership:hover {
+            transform: scale(1.05);
+        }
+        address {
+            border: 4px double transparent;
+            transition: border-color 0s 3s;
+        }
+        address:focus {
+            border-color: black;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -116,7 +167,7 @@
 
     <footer>
         <h2>Контакти</h2>
-        <address>Адреса: 01196, м. Київ, пл. Лесі Українки, 1<br>Телефон: (044) 286-84-11<br>Приймальня голови: (044) 286-82-30</address>
+        <address tabindex="0">Адреса: 01196, м. Київ, пл. Лесі Українки, 1<br>Телефон: (044) 286-84-11<br>Приймальня голови: (044) 286-82-30</address>
     </footer>
 </body>
 </html>

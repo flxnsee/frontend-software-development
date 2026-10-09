@@ -1,0 +1,140 @@
+body {
+    margin: 0;
+    padding: 20px;
+    background: rgb(245, 245, 245);
+    color: hsl(0, 0%, 20%);
+    font-family: "Segoe UI", Arial, sans-serif;
+    line-height: 1.6;
+}
+h1, h2, h3, caption {
+    font-family: Georgia, "Times New Roman", serif;
+    color: #722f37;
+}
+header {
+    background: white;
+    padding: 20px;
+    border-bottom: 2px solid #722f37;
+}
+header img {
+    float: left;
+    margin-right: 15px;
+}
+header h1 {
+    margin: 0;
+}
+nav form {
+    display: inline;
+}
+button {
+    background: white;
+    color: #722f37;
+    border: 1px solid #722f37;
+    padding: 8px 16px;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+button:hover {
+    background-color: #722f37;
+    color: white;
+    border-color: black;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+    background: white;
+}
+th, td {
+    border: 1px solid #722f37;
+    padding: 8px;
+}
+a[target] {
+    font-weight: bold;
+}
+a[href*="gov.ua"] {
+    font-style: italic;
+}
+h3 + ol {
+    margin-top: 0;
+}
+aside {
+    background: white;
+    padding: 20px;
+}
+footer {
+    background: white;
+    padding: 20px;
+    margin-top: 20px;
+}
+.activities {
+    padding-top: 155px;
+}
+.activities header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+.activities a:link {
+    color: darkgreen;
+}
+.directions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+}
+.directions article {
+    height: 100%;
+    box-sizing: border-box;
+    background: white;
+    padding: 15px;
+    border: 2px dashed #722f37;
+    border-left: 6px solid #722f37;
+}
+.directions figure {
+    margin: 0;
+}
+.directions img {
+    max-width: 100%;
+    height: auto;
+}
+.directions img:hover {
+    animation-name: dim;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+@keyframes dim {
+    from { filter: brightness(1); }
+    to { filter: brightness(0.75); }
+}
+.gov {
+    font-weight: lighter;
+    font-size: 0.9em;
+    font-style: italic;
+}
+main form {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 15px;
+    max-width: 900px;
+    background: white;
+    padding: 20px;
+}
+main form > fieldset {
+    order: 1;
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: 100%;
+}
+main form > p {
+    order: 2;
+    flex-grow: 1;
+}
+main form > button {
+    order: 3;
+    align-self: center;
+}
