@@ -55,6 +55,48 @@
         address:focus {
             border-color: black;
         }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        #submenu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            margin: 0;
+            padding: 10px 20px;
+            list-style: none;
+            white-space: nowrap;
+            background: white;
+            border: 1px solid #722f37;
+        }
+        .desktop nav {
+            display: flex;
+            gap: 10px;
+        }
+        .mobile nav {
+            float: right;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .mobile nav button {
+            width: 100%;
+        }
+        .mobile header p {
+            clear: right;
+            padding-top: 10px;
+        }
+        .mobile #submenu {
+            left: auto;
+            right: 0;
+        }
+        .mobile main {
+            display: block;
+        }
+        .mobile #leadership {
+            overflow-x: auto;
+        }
     </style>
 </head>
 <body>
@@ -62,17 +104,23 @@
         <img src="images/logo.png" alt="Герб Київської області" width="66" height="80">
         <h1>Київська обласна державна адміністрація</h1>
         <nav aria-label="Основна навігація">
-            <form action="activities.html" method="get">
-                <button type="submit">Напрями діяльності</button>
-            </form>
+            <div class="dropdown">
+                <button type="button" id="directions-button">Напрями діяльності</button>
+                <ul id="submenu" hidden>
+                    <li><a href="activities.html#education">Освіта</a></li>
+                    <li><a href="activities.html#social">Соціальна підтримка</a></li>
+                    <li><a href="activities.html#environment">Охорона довкілля</a></li>
+                    <li><a href="activities.html#health">Охорона здоров’я</a></li>
+                    <li><a href="activities.html#culture">Культура</a></li>
+                    <li><a href="activities.html#services">Адміністративні послуги</a></li>
+                </ul>
+            </div>
             <form action="feedback.html" method="get">
                 <button type="submit">Зворотній зв’язок</button>
             </form>
-        </nav>
-        <p>
             <button type="button">Перейти у власний кабінет</button>
             <button type="button">Зареєструватись</button>
-        </p>
+        </nav>
         <p><a href="#about">Про адміністрацію</a> | <a href="#leadership">Керівництво</a></p>
     </header>
 
@@ -169,5 +217,6 @@
         <h2>Контакти</h2>
         <address tabindex="0">Адреса: 01196, м. Київ, пл. Лесі Українки, 1<br>Телефон: (044) 286-84-11<br>Приймальня голови: (044) 286-82-30</address>
     </footer>
+    <script src="index.js"></script>
 </body>
 </html>

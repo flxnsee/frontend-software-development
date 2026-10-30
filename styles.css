@@ -91,6 +91,7 @@ footer {
     padding: 15px;
     border: 2px dashed #722f37;
     border-left: 6px solid #722f37;
+    scroll-margin-top: 160px;
 }
 .directions figure {
     margin: 0;
@@ -137,4 +138,20 @@ main form > p {
 main form > button {
     order: 3;
     align-self: center;
+}
+.carousel {
+    margin-top: 20px;
+    text-align: center;
+}
+.carousel img {
+    height: 20vh;
+    vertical-align: middle;
+}
+#tooltip {
+    position: absolute;
+    margin-left: 10px;
+    max-width: 220px;
+    padding: 8px;
+    background: #722f37;
+    color: white;
 }
