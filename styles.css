@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    padding: 20px;
+    padding: 1.25rem;
     background: rgb(245, 245, 245);
     color: hsl(0, 0%, 20%);
     font-family: "Segoe UI", Arial, sans-serif;
@@ -10,14 +10,22 @@ h1, h2, h3, caption {
     font-family: Georgia, "Times New Roman", serif;
     color: #722f37;
 }
+img {
+    max-width: 100%;
+    height: auto;
+}
+textarea {
+    max-width: 100%;
+    box-sizing: border-box;
+}
 header {
     background: white;
-    padding: 20px;
+    padding: 1.25rem;
     border-bottom: 2px solid #722f37;
 }
 header img {
     float: left;
-    margin-right: 15px;
+    margin-right: 1rem;
 }
 header h1 {
     margin: 0;
@@ -29,7 +37,10 @@ button {
     background: white;
     color: #722f37;
     border: 1px solid #722f37;
-    padding: 8px 16px;
+    padding: 0.5rem 1rem;
+    -webkit-transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    -moz-transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    -o-transition: background-color 0.3s, color 0.3s, border-color 0.3s;
     transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 button:hover {
@@ -44,7 +55,7 @@ table {
 }
 th, td {
     border: 1px solid #722f37;
-    padding: 8px;
+    padding: 0.5rem;
 }
 a[target] {
     font-weight: bold;
@@ -57,15 +68,15 @@ h3 + ol {
 }
 aside {
     background: white;
-    padding: 20px;
+    padding: 1.25rem;
 }
 footer {
     background: white;
-    padding: 20px;
-    margin-top: 20px;
+    padding: 1.25rem;
+    margin-top: 1.25rem;
 }
 .activities {
-    padding-top: 155px;
+    padding-top: 10rem;
 }
 .activities header {
     position: fixed;
@@ -79,8 +90,8 @@ footer {
 }
 .directions {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
     list-style: none;
     padding: 0;
 }
@@ -88,22 +99,28 @@ footer {
     height: 100%;
     box-sizing: border-box;
     background: white;
-    padding: 15px;
+    padding: 1rem;
     border: 2px dashed #722f37;
     border-left: 6px solid #722f37;
-    scroll-margin-top: 160px;
+    scroll-margin-top: 10rem;
 }
 .directions figure {
     margin: 0;
 }
-.directions img {
-    max-width: 100%;
-    height: auto;
-}
 .directions img:hover {
+    -webkit-animation: dim 1s forwards;
+    -moz-animation: dim 1s forwards;
     animation-name: dim;
     animation-duration: 1s;
     animation-fill-mode: forwards;
+}
+@-webkit-keyframes dim {
+    from { -webkit-filter: brightness(1); }
+    to { -webkit-filter: brightness(0.75); }
+}
+@-moz-keyframes dim {
+    from { filter: brightness(1); }
+    to { filter: brightness(0.75); }
 }
 @keyframes dim {
     from { filter: brightness(1); }
@@ -120,10 +137,10 @@ main form {
     justify-content: center;
     align-items: flex-start;
     align-content: flex-start;
-    gap: 15px;
-    max-width: 900px;
+    gap: 1rem;
+    max-width: 56.25rem;
     background: white;
-    padding: 20px;
+    padding: 1.25rem;
 }
 main form > fieldset {
     order: 1;
@@ -140,7 +157,7 @@ main form > button {
     align-self: center;
 }
 .carousel {
-    margin-top: 20px;
+    margin-top: 1.25rem;
     text-align: center;
 }
 .carousel img {
@@ -149,9 +166,32 @@ main form > button {
 }
 #tooltip {
     position: absolute;
-    margin-left: 10px;
-    max-width: 220px;
-    padding: 8px;
+    margin-left: 0.625rem;
+    max-width: 14rem;
+    padding: 0.5rem;
     background: #722f37;
     color: white;
+}
+@media (max-width: 1024px) {
+    .directions {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 600px) {
+    body {
+        padding: 0.625rem;
+    }
+    h1 {
+        font-size: 1.5em;
+    }
+    .directions {
+        grid-template-columns: 1fr;
+    }
+    textarea {
+        width: 100%;
+    }
+    #tooltip {
+        position: static;
+        margin-left: 0;
+    }
 }
